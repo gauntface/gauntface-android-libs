@@ -81,7 +81,11 @@ public abstract class ImageCacheUtils {
 			FileInputStream inputStream = new FileInputStream(imgFile);
 			BitmapFactory.Options bitmapOptions = new BitmapFactory.Options();
 			bitmapOptions.inPurgeable = true;
+			Log.v(C.TAG, "ImageCacheUtils: getCachedImage() 1");
 			Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+			if(bitmap != null) {
+				Log.v(C.TAG, "ImageCacheUtils: getCachedImage() 2 "+bitmap.isRecycled());
+			}
 			return bitmap;
 		} catch (FileNotFoundException e) {
 			Log.e(C.TAG, "ImageCacheUtils: getCachedImage() ", e);
