@@ -57,6 +57,10 @@ public abstract class ImageCacheUtils {
 	}
 	
 	public Bitmap downloadOrGetCachedBitmap(String url, String cachedImageDirectory, int compressionRate) {
+		if(url == null) {
+			return null;
+		}
+		
 		Bitmap bitmap = getCachedImage(url, cachedImageDirectory);
 		if(bitmap != null) {
 			return bitmap;
