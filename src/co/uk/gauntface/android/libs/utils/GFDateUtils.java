@@ -10,7 +10,7 @@ import java.util.Calendar;
  * Time: 18:21
  * To change this template use File | Settings | File Templates.
  */
-public class DateUtils {
+public class GFDateUtils {
 
     public static String formatCalendarForSQLite(Calendar calendar) {
         SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss.SSS");
